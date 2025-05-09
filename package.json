@@ -1,0 +1,44 @@
+{
+  "name": "@3tit-rnd/react-native-video-ekyc-sdk",
+  "version": "0.1.0",
+  "description": "React Native SDK for embedding VPBank Neo onboarding flows into Android & iOS apps.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/Nerdya/react-native-video-ekyc-sdk.git",
+  "author": "cuongnk <cuongnk@3tit.vn>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@stomp/stompjs": "^7.1.1",
+    "agora-react-native-rtm": "^1.5.1",
+    "axios": "^1.8.4",
+    "react": "^19.0.0",
+    "react-native": "^0.78.1",
+    "react-native-agora": "^4.5.2",
+    "react-native-crypto-js": "^1.0.0",
+    "react-native-public-ip": "^1.0.2",
+    "sockjs-client": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.12",
+    "@types/react-native": "^0.73.0",
+    "@types/react-native-crypto-js": "^1.0.3",
+    "@types/sockjs-client": "^1.5.4",
+    "rollup": "^4.37.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-native": ">=0.65.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "clean": "rm -rf dist",
+    "prepare": "yarn build"
+  }
+}
