@@ -1,4 +1,4 @@
-# react-native-vpage-sdk
+# @3tit-rnd/react-native-video-ekyc-sdk
 
 Deep integration React Native SDK for embedding new VPBank Neo onboarding flows into Android & iOS apps.
 
@@ -8,25 +8,25 @@ Deep integration React Native SDK for embedding new VPBank Neo onboarding flows 
 
 > **Note**: Ensure that you have react-native version 0.60.0 or higher installed.
 
-You can install `react-native-vpage-sdk` using yarn:
+You can install `@3tit-rnd/react-native-video-ekyc-sdk` using yarn:
 
 ```shell script
-yarn add react-native-vpage-sdk
+yarn add @3tit-rnd/react-native-video-ekyc-sdk
 ```
 
 or npm:
 
 ```shell script
-npm i react-native-vpage-sdk
+npm i @3tit-rnd/react-native-video-ekyc-sdk
 ```
 
 ## Integration Flow
 
-To successfully integrate `react-native-vpage-sdk`, follow the step-by-step instructions outlined below. These steps cover:
+To successfully integrate `@3tit-rnd/react-native-video-ekyc-sdk`, follow the step-by-step instructions outlined below. These steps cover:
 
 ### Prerequisites
 
-> **Note**: Ensure your React Native project has `react-native-vpage-sdk` installed.
+> **Note**: Ensure your React Native project has `@3tit-rnd/react-native-video-ekyc-sdk` installed.
 
 Add the required permissions to your project:
 
@@ -72,7 +72,7 @@ const apiToken = "<YOUR_API_TOKEN>";
 Create a meeting to get the `token`, `channelName` and `localUid`:
 
 ```typescript
-import { createApiService } from 'react-native-vpage-sdk';
+import { createApiService } from '@3tit-rnd/react-native-video-ekyc-sdk';
 
 const apiService = createApiService({
     baseUrl: config.vcoreBaseUrl,
@@ -91,7 +91,7 @@ const localUid = res?.data?.subId;
 Request audio and video permissions:
 
 ```typescript
-import { createVekycService } from 'react-native-vpage-sdk';
+import { createVekycService } from '@3tit-rnd/react-native-video-ekyc-sdk';
 
 const vekycService = createVekycService();
 
@@ -111,7 +111,7 @@ if (!permissions.microphone || !permissions.camera) {
 Initialize the STOMP client:
 
 ```typescript
-import { createSocketService } from 'react-native-vpage-sdk';
+import { createSocketService } from '@3tit-rnd/react-native-video-ekyc-sdk';
 
 const socketService = createSocketService();
 
@@ -215,7 +215,7 @@ socketService.cleanup();
 
 ## Example Flow
 
-Here’s an example of the complete flow, using `react-native-vpage-sdk`:
+Here’s an example of the complete flow, using `@3tit-rnd/react-native-video-ekyc-sdk`:
 
 [https://github.com/Nerdya/vpage-app](https://github.com/Nerdya/vpage-app)
 
