@@ -46,23 +46,16 @@ Add the required permissions to your project:
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
-Set a config variable:
+### Step 1: Get required parameters
+
+These below parameters will be distributed privately.
 
 ```typescript
 const config = {
-    vpageBaseUrl: "<YOUR_VPAGE_URL>",
     vcoreBaseUrl: "<YOUR_VCORE_URL>",
     socketBaseUrl: "<YOUR_SOCKET_URL>",
-    socketHealthCheck: 3000, // Health check interval in milliseconds
     appId: "<YOUR_APP_ID>",
 };
-```
-
-### Step 1: Get required parameters
-
-`appointmentId` and `apiToken` will be distributed privately.
-
-```typescript
 const appointmentId = "<YOUR_APPOINTMENT_ID>";
 const apiToken = "<YOUR_API_TOKEN>";
 ```
@@ -82,7 +75,7 @@ const apiService = createApiService({
 const res = await apiService.createMeeting(appointmentId, customerIp);
 const appId = config?.appId;
 const token = res?.data?.code;
-const channelName = res?.data?.key;
+const channelName = res?.data?.key; // A.K.A sessionId or sessionKey
 const localUid = res?.data?.subId;
 ```
 
@@ -225,14 +218,14 @@ See the method's detailed usage in the documentation comment of the respective m
 
 ### Web APIs
 
-Use `createAPIService(options)` to initialize APIService.
+Use `createAPIService(options: APIClientOptions)` to initialize APIService.
 
 Method | Description
 :- | :-
 `getConfigInfo(appointmentId)` | Fetches configuration information for a given appointment.
-`createMeeting(appointmentId, customerIp, agentId?)` | Creates a meeting for a given appointment.
+`createMeeting(appointmentId, customerIp)` | Creates a meeting for a given appointment.
 `saveLog(contractAction, detail?, sessionKey?)` | Saves a log entry with contract action and optional details.
-`hook(sessionId, sessionKey, agentId?)` | Hooks a session with the given session ID, session key, and optional agent ID.
+`hook(sessionId, sessionKey)` | Hooks a session with the given session ID and session key.
 `closeVideo(sessionKey)` | Closes a video session for a given session key.
 `getContractList(sessionKey)` | Retrieves the list of contracts associated with a given session key.
 `getContractURL(sessionKey)` | Retrieves the URL of a specific contract associated with a session key.
