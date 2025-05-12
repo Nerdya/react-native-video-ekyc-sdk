@@ -1,6 +1,6 @@
 {
   "name": "@3tit-rnd/react-native-video-ekyc-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Native SDK for embedding VPBank Neo onboarding flows into Android & iOS apps.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
